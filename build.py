@@ -38,7 +38,7 @@ def build():
     src = (LANDING / "index.html").read_text(encoding="utf-8")
     (SITE / "index.html").write_text(HEAD + src + TAIL, encoding="utf-8", newline="\n")
     shutil.rmtree(SITE / "assets", ignore_errors=True)
-    shutil.copytree(LANDING / "assets", SITE / "assets")
+    shutil.copytree(LANDING / "assets", SITE / "assets", ignore=shutil.ignore_patterns(".*"))
     (SITE / ".nojekyll").touch()
     print("built", SITE / "index.html")
 

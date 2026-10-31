@@ -1196,7 +1196,7 @@ function camStation(st){
   const fov = camera.fov * Math.PI / 180, th = Math.tan(fov / 2), tw = th * aspect;
   let tx = 0, ty, tz = 0, W, H, el, offX = 0, offY = 0;
   if (st === 0) { ty = 1.15; W = portrait ? 3.0 : 6.2; H = portrait ? 3.4 : 5.0; el = .3; offY = portrait ? .25 : 0; offX = portrait ? 0 : .2 * dirSign; }
-  else if (st <= 4) { const h = HEIGHTS[st - 1]; ty = h * .5 + .03; tz = .35; H = h * (portrait ? 2.9 : 1.75); W = WIDTHS[st - 1] * (portrait ? 1.9 : 1.6); el = .2; offY = portrait ? .25 : 0; offX = portrait ? 0 : .22 * dirSign; }
+  else if (st <= 4) { const h = HEIGHTS[st - 1]; ty = h * .5 + .03; tz = .35; H = Math.max(portrait ? 2.0 : 2.4, h * (portrait ? 2.9 : 2.6)); W = WIDTHS[st - 1] * (portrait ? 1.9 : 2.4); el = .2; offY = portrait ? .25 : 0; offX = portrait ? 0 : .22 * dirSign; }
   else { ty = .95; W = portrait ? 4.3 : 7.4; H = portrait ? 3.2 : 5.4; el = .36; offY = portrait ? .25 : 0; offX = portrait ? 0 : .2 * dirSign; }
   const d = Math.max((H / 2) / th, (W / 2) / tw);
   const n = Math.hypot(1, el);
