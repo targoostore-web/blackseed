@@ -1,0 +1,1392 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://targoostore-web.github.io/blackseed/">
+<meta property="og:title" content="BlackSeed — توب لاين">
+<meta property="og:description" content="مجموعة BlackSeed الاحترافية للعناية بالشعر: شامبو، ماسك، سيروم وعطر شعر في علبة هدية. اطلبوها الآن من توب لاين، الخليل.">
+<meta property="og:image" content="https://targoostore-web.github.io/blackseed/assets/collection.jpg">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<style>body{margin:0}</style>
+</head>
+<body>
+<title>BlackSeed Collection</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="BlackSeed Professional Hair Care — مجموعة العناية المتكاملة من توب لاين، الخليل">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap">
+<style>
+/* Layout: one fixed WebGL stage (black marble, gold ring) that the scroll drives through hero → 4 routine steps → gift box; HTML copy floats above it, then solid sections take over for film, ordering and footer. Single dark look by choice. */
+:root{
+  color-scheme: dark;
+  --ink:#090706;
+  --coal:#120e0a;
+  --panel:#15100b;
+  --gold:#d8b46a;
+  --gold-hi:#f6e2b0;
+  --gold-lo:#a9803c;
+  --cream:#fbf6ec;
+  --mute:#b9ad99;
+  --line:rgba(216,180,106,.28);
+  --f-display-ar:"El Messiri","Tajawal","Segoe UI",Tahoma,serif;
+  --f-body-ar:"Tajawal","Segoe UI",Tahoma,system-ui,sans-serif;
+  --f-display-en:"Playfair Display",Georgia,"Times New Roman",serif;
+  --f-body-en:"Montserrat","Helvetica Neue",Arial,sans-serif;
+  --f-display:var(--f-display-ar);
+  --f-body:var(--f-body-ar);
+  --gutter-l:max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(16px, env(safe-area-inset-right, 0px));
+  --dock-h:72px;
+}
+html[lang="en"]{ --f-display:var(--f-display-en); --f-body:var(--f-body-en); }
+html{ background:var(--ink); scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+body{
+  background:var(--ink); color:var(--cream);
+  font-family:var(--f-body); font-size:16px; line-height:1.75;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
+}
+body::before{ content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); z-index:30; background:var(--ink); }
+*{ box-sizing:border-box; }
+a{ color:inherit; }
+button{ font:inherit; color:inherit; }
+:focus-visible{ outline:2px solid var(--gold-hi); outline-offset:3px; }
+
+/* ---------- stage ---------- */
+.backdrop{
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 45% at 50% 38%, rgba(216,180,106,.16), transparent 70%),
+    radial-gradient(120% 80% at 50% 110%, #1b140c 0%, transparent 60%),
+    linear-gradient(180deg, #0c0907 0%, var(--ink) 100%);
+}
+#stage{
+  position:fixed; inset:0; width:100%; height:100lvh; z-index:1;
+  display:block; touch-action:pan-y; cursor:grab;
+  opacity:0; transition:opacity 1.2s ease;
+}
+.is3d #stage{ opacity:1; }
+#stage.grabbing{ cursor:grabbing; }
+#stage.pointing{ cursor:pointer; }
+.hotspots{ position:fixed; inset:0; z-index:4; pointer-events:none; }
+.hs{
+  position:absolute; left:0; top:0; pointer-events:auto;
+  display:flex; align-items:center; gap:.45em;
+  padding:.28em .8em .28em .6em; border-radius:999px;
+  background:rgba(9,7,6,.72); border:1px solid var(--line);
+  font-family:var(--f-body); font-size:12.5px; line-height:1.4; white-space:nowrap; color:var(--gold-hi);
+  cursor:pointer; opacity:0; visibility:hidden;
+  transition:opacity .35s ease, border-color .2s;
+}
+.hs b{ font-family:var(--f-display-en); font-weight:500; color:var(--gold); font-size:11px; letter-spacing:.06em; }
+.hs::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--gold-hi); box-shadow:0 0 10px var(--gold); }
+.hs:hover{ border-color:var(--gold); }
+
+/* ---------- header ---------- */
+.top{
+  position:fixed; top:env(safe-area-inset-top, 0px); inset-inline:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding-block:12px; padding-left:var(--gutter-l); padding-right:var(--gutter-r);
+  background:linear-gradient(180deg, rgba(9,7,6,.85), rgba(9,7,6,0));
+  transition:background .3s, box-shadow .3s;
+}
+.top.solid{ background:rgba(9,7,6,.94); box-shadow:0 1px 0 var(--line); }
+.brand{ display:flex; flex-direction:column; align-items:flex-start; text-decoration:none; line-height:1; direction:ltr; }
+.brand span{ font-family:var(--f-display-en); font-weight:500; font-size:20px; letter-spacing:.24em; color:var(--cream); }
+.brand small{ font-family:var(--f-body-en); font-size:9px; letter-spacing:.3em; color:var(--gold); margin-top:5px; white-space:nowrap; }
+.brand span{ white-space:nowrap; }
+@media (max-width:400px){ .brand span{ font-size:17px; letter-spacing:.2em; } .brand small{ letter-spacing:.2em; } }
+.top-actions{ display:flex; gap:8px; align-items:center; }
+.chip-btn{
+  min-width:44px; height:38px; padding:0 12px; border-radius:999px;
+  background:rgba(9,7,6,.6); border:1px solid var(--line); color:var(--gold-hi);
+  font-size:13px; font-weight:600; letter-spacing:.06em; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+}
+.chip-btn:hover{ border-color:var(--gold); }
+.chip-btn[aria-pressed="true"]{ background:var(--gold); color:var(--ink); }
+.chip-btn svg{ width:16px; height:16px; }
+#langBtn .ar{ font-family:var(--f-body-ar); font-size:15px; }
+
+/* ---------- rail (routine progress) ---------- */
+.rail{
+  position:fixed; z-index:15; display:flex; gap:6px;
+  top:calc(env(safe-area-inset-top, 0px) + 64px); inset-inline:var(--gutter-l) var(--gutter-r);
+  opacity:0; visibility:hidden; transition:opacity .4s ease, visibility .4s;
+}
+.rail.on{ opacity:1; visibility:visible; }
+.rail button{
+  flex:1; background:none; border:0; padding:8px 0 0; cursor:pointer; text-align:start;
+  border-top:2px solid rgba(216,180,106,.22);
+  font-family:var(--f-display-en); font-size:11px; letter-spacing:.1em; color:var(--mute);
+  transition:border-color .3s, color .3s;
+}
+.rail button.on{ border-color:var(--gold); color:var(--gold-hi); }
+@media (min-width:900px){
+  .rail{ flex-direction:column; top:50%; transform:translateY(-50%); inset-inline:auto var(--gutter-r); width:auto; gap:14px; }
+  .rail button{ border-top:0; border-inline-end:2px solid rgba(216,180,106,.22); padding:4px 14px 4px 0; padding-inline:0 14px; text-align:end; }
+  .rail button.on{ border-color:var(--gold); }
+}
+
+/* ---------- sections ---------- */
+main{ position:relative; z-index:3; }
+.sec{ position:relative; padding-left:var(--gutter-l); padding-right:var(--gutter-r); pointer-events:none; }
+.sec a, .sec button, .sec details, .sec summary, .sec input, .sec video, .sec .selectable{ pointer-events:auto; }
+.solid{ pointer-events:auto; background:var(--ink); }
+
+.eyebrow{
+  font-family:var(--f-body-en); font-size:11px; letter-spacing:.32em; text-transform:uppercase; color:var(--gold);
+  display:flex; align-items:center; gap:10px; margin:0;
+}
+html[lang="ar"] .eyebrow{ font-family:var(--f-body-ar); letter-spacing:.04em; font-size:14px; font-weight:500; }
+.eyebrow::before{ content:""; width:28px; height:1px; background:var(--gold); }
+.gold-text{
+  background:linear-gradient(180deg, var(--gold-hi) 0%, var(--gold) 55%, var(--gold-lo) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+
+/* hero */
+.hero{
+  min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end;
+  padding-block:96px calc(var(--dock-h) + 28px);
+  background:linear-gradient(0deg, rgba(9,7,6,.96) 0%, rgba(9,7,6,.7) 30%, rgba(9,7,6,0) 56%);
+}
+.hero .fallback{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:0; transition:opacity .8s; }
+.no3d .hero .fallback{ opacity:.7; }
+.hero-copy{ display:grid; gap:16px; max-width:36rem; }
+.hero h1{
+  margin:0; font-family:var(--f-display); font-weight:700;
+  font-size:clamp(2.6rem, 11.5vw, 5.4rem); line-height:1.12; text-wrap:balance;
+}
+html[lang="en"] .hero h1{ font-weight:500; font-size:clamp(2.4rem, 10vw, 5rem); line-height:1.05; letter-spacing:-.01em; }
+.lede{ margin:0; color:var(--mute); font-size:clamp(1rem, 4.2vw, 1.15rem); max-width:30rem; text-wrap:pretty; }
+.cta-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:4px; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  min-height:50px; padding:0 22px; border-radius:999px; text-decoration:none; cursor:pointer;
+  font-weight:700; font-size:15.5px; letter-spacing:.01em; border:1px solid transparent;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s;
+}
+html[lang="en"] .btn{ font-weight:600; font-size:14px; letter-spacing:.04em; }
+.btn svg{ width:18px; height:18px; flex:none; }
+.btn-gold{
+  color:var(--ink);
+  background:linear-gradient(180deg, var(--gold-hi), var(--gold) 60%, var(--gold-lo));
+  box-shadow:0 8px 28px rgba(216,180,106,.25), inset 0 1px 0 rgba(255,255,255,.5);
+}
+.btn-gold:hover{ transform:translateY(-1px); box-shadow:0 10px 34px rgba(216,180,106,.38), inset 0 1px 0 rgba(255,255,255,.5); }
+.btn-line{ color:var(--gold-hi); border-color:var(--line); background:rgba(9,7,6,.4); }
+.btn-line:hover{ border-color:var(--gold); }
+.hint{ display:flex; align-items:center; gap:8px; margin:6px 0 0; font-size:13px; color:var(--mute); }
+.hint svg{ width:18px; height:18px; color:var(--gold); flex:none; }
+
+@media (max-width:899px){
+  .hero{ padding-block:96px calc(var(--dock-h) + 8px); }
+  .hero-copy{ gap:12px; }
+  .hero h1{ font-size:clamp(2.2rem, 10.5vw, 3.4rem); }
+  html[lang="en"] .hero h1{ font-size:clamp(2.1rem, 9.5vw, 3.2rem); }
+  .lede{ font-size:15px; line-height:1.65; }
+  .hero .cta-row .btn-line{ display:none; }
+  .hero .cta-row .btn-gold{ flex:1; }
+  .eyebrow{ letter-spacing:.16em; }
+  .hotspots{ display:none; }
+  /* keep each step card at the bottom of the screen so the product above stays clear */
+  .step .card, .boxsec .card{ position:sticky; bottom:calc(var(--dock-h) + 12px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* steps */
+.step{
+  min-height:118svh; display:flex; align-items:flex-end;
+  padding-block:0 calc(var(--dock-h) + 12svh);
+}
+.card{
+  position:relative; width:100%; max-width:30rem;
+  padding:18px 18px 16px;
+  background:linear-gradient(180deg, rgba(21,16,11,.78), rgba(9,7,6,.92));
+  border:1px solid var(--line);
+  border-radius:3px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+}
+.card::before, .card::after{
+  content:""; position:absolute; width:18px; height:18px; border:1px solid var(--gold); pointer-events:none;
+}
+.card::before{ top:-1px; inset-inline-start:-1px; border-width:1px 0 0 0; border-inline-start-width:1px; }
+.card::after{ bottom:-1px; inset-inline-end:-1px; border-width:0 0 1px 0; border-inline-end-width:1px; }
+.step-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:12px; }
+.num{
+  font-family:var(--f-display-en); font-style:italic; font-weight:500; line-height:.8;
+  font-size:clamp(3.2rem, 15vw, 6.5rem); color:transparent; -webkit-text-stroke:1px var(--gold);
+  direction:ltr;
+}
+.vol{ font-family:var(--f-body-en); font-size:13px; letter-spacing:.18em; color:var(--gold-hi); direction:ltr; padding-bottom:8px; white-space:nowrap; }
+.card h2{
+  margin:6px 0 0; font-family:var(--f-display); font-weight:700; line-height:1.2;
+  font-size:clamp(1.8rem, 8vw, 2.9rem); text-wrap:balance;
+}
+html[lang="en"] .card h2{ font-weight:500; }
+.card .kicker{ margin:8px 0 0; }
+.card p.body{ margin:10px 0 0; color:var(--mute); text-wrap:pretty; }
+.specs{ display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 0; padding:0; list-style:none; }
+.specs li{
+  font-size:13px; line-height:1; padding:8px 12px; border:1px solid var(--line); border-radius:999px; color:var(--gold-hi);
+}
+.specs li.en{ font-family:var(--f-body-en); letter-spacing:.08em; direction:ltr; }
+.card-actions{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:16px; flex-wrap:wrap; }
+.spin-btn{
+  position:relative; display:inline-flex; align-items:center; gap:8px; min-height:42px; padding:0 16px; border-radius:999px;
+  border:1px solid var(--line); background:transparent; color:var(--gold-hi); cursor:pointer; font-size:14px;
+}
+.spin-btn:hover{ border-color:var(--gold); }
+.spin-btn svg{ width:16px; height:16px; }
+.swipe{ font-size:12.5px; color:var(--mute); }
+.no3d .spin-btn, .no3d .swipe, .no3d .hint, .no3d .hotspots{ display:none; }
+
+/* box */
+.boxsec{ min-height:125svh; display:flex; align-items:flex-end; padding-block:0 calc(var(--dock-h) + 10svh); }
+.boxsec .fallback{ display:none; }
+.no3d .boxsec{ flex-direction:column; align-items:stretch; justify-content:flex-end; gap:20px; min-height:auto; padding-top:40px; }
+.no3d .boxsec .fallback{ display:block; width:100%; max-width:30rem; aspect-ratio:4/5; object-fit:cover; border:1px solid var(--line); }
+.contents{ list-style:none; margin:16px 0 0; padding:0; display:grid; }
+.contents li{
+  display:grid; grid-template-columns:auto 1fr auto; align-items:baseline; gap:12px;
+  padding:10px 0; border-bottom:1px solid rgba(216,180,106,.16);
+}
+.contents li:last-child{ border-bottom:0; }
+@media (max-width:899px){
+  .boxsec .card p.body{ display:none; }
+  .contents{ grid-template-columns:1fr 1fr; column-gap:16px; margin-top:10px; }
+  .contents li{ grid-template-columns:auto 1fr; gap:2px 8px; padding:8px 0; }
+  .contents li:nth-last-child(2){ border-bottom:0; }
+  .contents .ml{ grid-column:2; font-size:12px; }
+  .price{ margin-top:8px; padding:10px 12px; }
+  .boxsec .cta-row{ flex-wrap:nowrap; }
+  .boxsec .cta-row .btn{ flex:1; padding:0 14px; white-space:nowrap; }
+  .boxsec .cta-row .spin-btn{ flex:none; width:50px; height:50px; padding:0; justify-content:center; }
+  .boxsec .cta-row .spin-btn span{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+}
+.contents .n{ font-family:var(--f-display-en); font-style:italic; color:var(--gold); font-size:15px; direction:ltr; }
+.contents .ml{ font-family:var(--f-body-en); font-size:13px; letter-spacing:.12em; color:var(--gold-hi); direction:ltr; font-variant-numeric:tabular-nums; }
+.price{
+  display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:14px;
+  padding:12px 14px; border:1px dashed var(--line); border-radius:3px; font-size:14px; color:var(--mute);
+}
+.price strong{ color:var(--gold-hi); font-weight:600; }
+
+/* film */
+.film{ padding-block:88px 72px; overflow:hidden;
+  background:
+    radial-gradient(70% 50% at 50% 0%, rgba(216,180,106,.12), transparent 70%),
+    var(--ink);
+}
+.film-grid{ display:grid; gap:28px; max-width:1100px; margin:0 auto; align-items:center; }
+.film h2, .order h2{
+  margin:12px 0 0; font-family:var(--f-display); font-weight:700; line-height:1.2; font-size:clamp(2rem, 8vw, 3.2rem); text-wrap:balance;
+}
+html[lang="en"] .film h2, html[lang="en"] .order h2{ font-weight:500; }
+.film p{ color:var(--mute); margin:12px 0 0; max-width:32rem; }
+.frames{ display:grid; grid-template-columns:1.25fr 1fr; gap:12px; align-items:end; }
+.frame{ position:relative; margin:0; border:1px solid var(--line); padding:6px; background:var(--coal); }
+.frame video, .frame img{ display:block; width:100%; height:auto; aspect-ratio:3/4; object-fit:cover; max-width:100%; }
+.frame.tall img{ aspect-ratio:18/25; }
+.frame figcaption{
+  position:absolute; inset-inline-start:14px; bottom:14px; font-family:var(--f-body-en); font-size:11px; letter-spacing:.26em;
+  color:var(--gold-hi); text-transform:uppercase; background:rgba(9,7,6,.6); padding:5px 8px; direction:ltr;
+}
+@media (min-width:900px){
+  .film-grid{ grid-template-columns:1fr 1.1fr; gap:64px; }
+}
+
+/* order + faq */
+.order{ padding-block:72px 64px; }
+.order-inner{ max-width:1100px; margin:0 auto; display:grid; gap:36px; }
+.how{ list-style:none; margin:20px 0 0; padding:0; display:grid; gap:12px; counter-reset:how; }
+.how li{ display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:center; counter-increment:how; }
+.how li::before{
+  content:counter(how); width:44px; height:44px; border-radius:50%; border:1px solid var(--gold);
+  display:grid; place-items:center; font-family:var(--f-display-en); font-style:italic; color:var(--gold-hi); font-size:18px;
+}
+.order .cta-row{ margin-top:22px; }
+.faq{ display:grid; gap:0; border-top:1px solid var(--line); }
+.faq details{ border-bottom:1px solid var(--line); }
+.faq summary{
+  list-style:none; cursor:pointer; padding:18px 0; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  font-family:var(--f-display); font-size:1.15rem; font-weight:600;
+}
+html[lang="en"] .faq summary{ font-weight:500; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:"+"; font-family:var(--f-body-en); font-weight:300; font-size:26px; line-height:1; color:var(--gold); transition:transform .25s; }
+.faq details[open] summary::after{ transform:rotate(45deg); }
+.faq details p{ margin:0 0 18px; color:var(--mute); max-width:40rem; }
+.ph{ color:var(--gold-hi); border-bottom:1px dashed var(--gold-lo); }
+@media (min-width:900px){ .order-inner{ grid-template-columns:1fr 1.15fr; gap:72px; align-items:start; } }
+
+/* footer */
+footer{
+  position:relative; z-index:3; border-top:1px solid var(--line);
+  padding-block:44px calc(var(--dock-h) + 40px); padding-left:var(--gutter-l); padding-right:var(--gutter-r);
+}
+.foot{ max-width:1100px; margin:0 auto; display:grid; gap:22px; }
+.foot .store{ font-family:var(--f-display); font-size:1.6rem; font-weight:700; margin:0; }
+html[lang="en"] .foot .store{ font-weight:500; }
+.foot .where{ color:var(--mute); margin:0; }
+.phone-row{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; }
+.phone{ font-family:var(--f-body-en); font-size:1.25rem; letter-spacing:.06em; color:var(--gold-hi); direction:ltr; unicode-bidi:isolate; user-select:all; }
+.foot-links{ display:flex; flex-wrap:wrap; gap:10px; }
+.fine{ font-family:var(--f-body-en); font-size:11px; letter-spacing:.28em; color:var(--gold-lo); text-transform:uppercase; direction:ltr; text-align:start; margin:8px 0 0; }
+
+/* dock */
+.dock{
+  position:fixed; inset:auto 0 0; z-index:25;
+  display:flex; gap:10px; align-items:center;
+  padding-top:10px; padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px));
+  padding-left:var(--gutter-l); padding-right:var(--gutter-r);
+  background:linear-gradient(0deg, rgba(9,7,6,.97) 60%, rgba(9,7,6,.0));
+  transform:translateY(110%); transition:transform .45s cubic-bezier(.2,.8,.2,1);
+}
+.dock.on{ transform:none; }
+.dock .btn{ flex:1; min-height:50px; padding:0 14px; }
+.dock .btn-line{ flex:0 1 auto; }
+@media (min-width:900px){ .dock{ justify-content:center; } .dock .btn{ flex:0 0 260px; } }
+
+.toast{
+  position:fixed; z-index:40; left:50%; bottom:calc(var(--dock-h) + 24px + env(safe-area-inset-bottom, 0px));
+  transform:translate(-50%, 20px); opacity:0; pointer-events:none;
+  background:var(--cream); color:var(--ink); padding:10px 16px; border-radius:999px; font-size:14px; font-weight:600;
+  transition:opacity .3s, transform .3s; max-width:calc(100% - 32px); text-align:center;
+}
+.toast.on{ opacity:1; transform:translate(-50%, 0); }
+
+/* reveal (resting state stays visible) */
+.js [data-reveal]{ transform:translateY(16px); transition:transform 1s cubic-bezier(.2,.8,.2,1); }
+.js [data-reveal].in{ transform:none; }
+
+/* desktop composition: copy on the inline-start side, product on the other */
+@media (min-width:900px){
+  .hero{ justify-content:center; padding-block:120px 120px; background:linear-gradient(var(--edge-dir, 270deg), rgba(9,7,6,.92) 0%, rgba(9,7,6,.55) 38%, rgba(9,7,6,0) 62%); }
+  html[dir="ltr"] .hero{ --edge-dir:90deg; }
+  .step, .boxsec{ align-items:center; padding-block:0; }
+  .card{ padding:30px 30px 26px; }
+  .sec{ padding-inline-start:max(6vw, 32px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .js [data-reveal]{ transform:none; transition:none; }
+  .dock, .toast, #stage{ transition:none; }
+}
+</style>
+
+<div class="backdrop" aria-hidden="true"></div>
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<div class="hotspots" id="hotspots">
+  <button class="hs" type="button" data-go="step1"><b>01</b><span data-i18n="p.shampoo">الشامبو</span></button>
+  <button class="hs" type="button" data-go="step2"><b>02</b><span data-i18n="p.mask">الماسك</span></button>
+  <button class="hs" type="button" data-go="step3"><b>03</b><span data-i18n="p.serum">سيروم الشعر</span></button>
+  <button class="hs" type="button" data-go="step4"><b>04</b><span data-i18n="p.perfume">عطر الشعر</span></button>
+</div>
+
+<header class="top">
+  <a class="brand" href="#hero" aria-label="BlackSeed"><span>BLACKSEED</span><small>PROFESSIONAL HAIR CARE</small></a>
+  <div class="top-actions">
+    <button class="chip-btn" id="gyroBtn" type="button" aria-pressed="false" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M3 8c-1.3 2.6-1.3 5.4 0 8M21 8c1.3 2.6 1.3 5.4 0 8"/></svg>
+      <span data-i18n="ui.tilt">إمالة</span>
+    </button>
+    <button class="chip-btn" id="langBtn" type="button" aria-label="Switch to English"><span class="en">EN</span></button>
+  </div>
+</header>
+
+<nav class="rail" id="rail" aria-label="الروتين">
+  <button type="button" data-go="step1">01</button>
+  <button type="button" data-go="step2">02</button>
+  <button type="button" data-go="step3">03</button>
+  <button type="button" data-go="step4">04</button>
+</nav>
+
+<main>
+  <section class="sec hero" id="hero" data-station="0">
+    <img class="fallback" src="assets/collection.webp" alt="" width="720" height="900">
+    <div class="hero-copy" data-reveal>
+      <p class="eyebrow" data-i18n="hero.eyebrow">مجموعة BlackSeed · من توب لاين، الخليل</p>
+      <h1 class="gold-text" data-i18n="hero.title">عناية احترافية… بين يديكِ</h1>
+      <p class="lede" data-i18n="hero.lede">أربع خطوات متكاملة لعناية الشعر: شامبو، ماسك، سيروم، وعطر للشعر، في علبة هدية واحدة.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="https://m.me/61591989787073" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.1 2 11.3c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg>
+          <span data-i18n="cta.messenger">اطلبيها الآن عبر ماسنجر</span>
+        </a>
+        <a class="btn btn-line" href="#step1" data-go="step1"><span data-i18n="hero.explore">اكتشفي الروتين</span></a>
+      </div>
+      <p class="hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M7 9l-3 3 3 3M17 9l3 3-3 3"/></svg>
+        <span data-i18n="hero.hint">اسحبي لتدوير المجموعة، واضغطي على أي منتج</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="sec step" id="step1" data-station="1">
+    <article class="card" data-reveal>
+      <div class="step-head"><span class="num">01</span><span class="vol">1000 ML</span></div>
+      <p class="eyebrow kicker" data-i18n="s1.k">الخطوة الأولى · نظّفي</p>
+      <h2 data-i18n="p.shampoo">الشامبو</h2>
+      <p class="body" data-i18n="s1.b">تركيبة خالية من السلفات والملح، مخصّصة للشعر الجاف والمصبوغ.</p>
+      <ul class="specs">
+        <li data-i18n="s1.t1">خالٍ من السلفات</li><li data-i18n="s1.t2">خالٍ من الملح</li><li data-i18n="s1.t3">للشعر الجاف والمصبوغ</li>
+      </ul>
+      <div class="card-actions">
+        <button class="spin-btn" type="button" data-spin="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg><span data-i18n="ui.spin">تدوير 360°</span></button>
+        <span class="swipe" data-i18n="ui.swipe">اسحبي يمينًا ويسارًا للتدوير</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec step" id="step2" data-station="2">
+    <article class="card" data-reveal>
+      <div class="step-head"><span class="num">02</span><span class="vol">500 ML</span></div>
+      <p class="eyebrow kicker" data-i18n="s2.k">الخطوة الثانية · غذّي</p>
+      <h2 data-i18n="p.mask">الماسك</h2>
+      <p class="body" data-i18n="s2.b">ماسك للشعر الجاف والمتضرر، يأتي مباشرة بعد الشامبو.</p>
+      <ul class="specs">
+        <li data-i18n="s2.t1">للشعر الجاف والمتضرر</li><li data-i18n="s2.t2">بعد الشامبو</li>
+      </ul>
+      <div class="card-actions">
+        <button class="spin-btn" type="button" data-spin="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg><span data-i18n="ui.spin">تدوير 360°</span></button>
+        <span class="swipe" data-i18n="ui.swipe">اسحبي يمينًا ويسارًا للتدوير</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec step" id="step3" data-station="3">
+    <article class="card" data-reveal>
+      <div class="step-head"><span class="num">03</span><span class="vol">120 ML</span></div>
+      <p class="eyebrow kicker" data-i18n="s3.k">الخطوة الثالثة · لمعة</p>
+      <h2 data-i18n="p.serum">سيروم الشعر</h2>
+      <p class="body" data-i18n="s3.b">قطرات قليلة تمنح شعركِ لمعة حريرية.</p>
+      <ul class="specs">
+        <li data-i18n="s3.t1">لمعة حريرية</li><li data-i18n="s3.t2">زجاج كهرماني</li>
+      </ul>
+      <div class="card-actions">
+        <button class="spin-btn" type="button" data-spin="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg><span data-i18n="ui.spin">تدوير 360°</span></button>
+        <span class="swipe" data-i18n="ui.swipe">اسحبي يمينًا ويسارًا للتدوير</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec step" id="step4" data-station="4">
+    <article class="card" data-reveal>
+      <div class="step-head"><span class="num">04</span><span class="vol">50 ML</span></div>
+      <p class="eyebrow kicker" data-i18n="s4.k">الخطوة الرابعة · عطّري</p>
+      <h2 data-i18n="p.perfume">عطر الشعر</h2>
+      <p class="body" data-i18n="s4.b">اللمسة الأخيرة: رائحة تدوم على شعركِ.</p>
+      <ul class="specs">
+        <li data-i18n="s4.t1">رائحة تدوم</li><li data-i18n="s4.t2">اللمسة الأخيرة</li>
+      </ul>
+      <div class="card-actions">
+        <button class="spin-btn" type="button" data-spin="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg><span data-i18n="ui.spin">تدوير 360°</span></button>
+        <span class="swipe" data-i18n="ui.swipe">اسحبي يمينًا ويسارًا للتدوير</span>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec boxsec" id="box" data-station="5">
+    <img class="fallback" src="assets/collection.webp" alt="" width="720" height="900" loading="lazy">
+    <article class="card" data-reveal>
+      <p class="eyebrow" data-i18n="box.k">مجموعة العناية المتكاملة</p>
+      <h2 data-i18n="box.t">الروتين كاملًا… في علبة واحدة</h2>
+      <p class="body" data-i18n="box.b">علبة هدية بيضاء تجمع المنتجات الأربعة، جاهزة لكِ أو لمن تحبّين.</p>
+      <ol class="contents">
+        <li><span class="n">01</span><span data-i18n="p.shampoo">الشامبو</span><span class="ml">1000 ml</span></li>
+        <li><span class="n">02</span><span data-i18n="p.mask">الماسك</span><span class="ml">500 ml</span></li>
+        <li><span class="n">03</span><span data-i18n="p.serum">سيروم الشعر</span><span class="ml">120 ml</span></li>
+        <li><span class="n">04</span><span data-i18n="p.perfume">عطر الشعر</span><span class="ml">50 ml</span></li>
+      </ol>
+      <!-- PRICE: set PRICE in the script below (e.g. "180 ₪") and it replaces this line -->
+      <div class="price" id="priceRow"><span data-i18n="box.priceLabel">السعر</span><strong id="priceVal" data-i18n="box.priceAsk">اسألينا عبر ماسنجر</strong></div>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="https://m.me/61591989787073" target="_blank" rel="noopener"><span data-i18n="box.cta">اطلبي المجموعة الآن</span></a>
+        <button class="spin-btn" type="button" data-spin="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4"/></svg><span data-i18n="ui.spinBox">دوّري العلبة</span></button>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec film solid" id="film">
+    <div class="film-grid">
+      <div data-reveal>
+        <p class="eyebrow" data-i18n="film.k">من الحملة</p>
+        <h2 data-i18n="film.t">لحظة عناية يومية</h2>
+        <p data-i18n="film.b">من الشامبو إلى آخر رشّة عطر، روتين BlackSeed يرافقكِ خطوة بخطوة.</p>
+      </div>
+      <div class="frames" data-reveal>
+        <figure class="frame">
+          <video id="filmVid" src="assets/film.mp4" poster="assets/film-poster.jpg" muted loop playsinline preload="none" aria-label="BlackSeed"></video>
+        </figure>
+        <figure class="frame tall">
+          <img src="assets/model.webp" alt="" width="720" height="1000" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec order solid" id="order">
+    <div class="order-inner">
+      <div data-reveal>
+        <p class="eyebrow" data-i18n="order.k">الطلب</p>
+        <h2 data-i18n="order.t">كيف تطلبين؟</h2>
+        <ol class="how">
+          <li data-i18n="order.s1">راسلينا على ماسنجر أو اتصلي بنا.</li>
+          <li data-i18n="order.s2">أرسلي اسمكِ وعنوانكِ ورقم هاتفكِ.</li>
+          <li data-i18n="order.s3">نؤكّد معكِ الطلب وموعد التوصيل.</li>
+        </ol>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="https://m.me/61591989787073" target="_blank" rel="noopener"><span data-i18n="cta.messengerShort">ماسنجر</span></a>
+          <a class="btn btn-line" href="tel:+970594310367"><span data-i18n="cta.call">اتصلي بنا</span>&nbsp;<bdi dir="ltr">0594 310 367</bdi></a>
+        </div>
+      </div>
+      <div class="faq" data-reveal>
+        <details open>
+          <summary data-i18n="faq.q1">ماذا تحتوي المجموعة؟</summary>
+          <p data-i18n="faq.a1">شامبو 1000 مل، ماسك 500 مل، سيروم شعر 120 مل، وعطر شعر 50 مل، داخل علبة هدية بيضاء.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q2">لأي نوع شعر تناسب؟</summary>
+          <p data-i18n="faq.a2">الشامبو خالٍ من السلفات والملح ومخصّص للشعر الجاف والمصبوغ، والماسك للشعر الجاف والمتضرر.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q3">بأي ترتيب أستخدمها؟</summary>
+          <p data-i18n="faq.a3">الشامبو أولًا، ثم الماسك، ثم السيروم للمعة، وأخيرًا عطر الشعر.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q4">كم السعر وتكلفة التوصيل؟</summary>
+          <!-- PLACEHOLDER: replace with the real price and delivery details -->
+          <p><span class="ph" data-i18n="faq.a4">تُعلَن الأسعار وتفاصيل التوصيل قريبًا.</span> <span data-i18n="faq.a4b">راسلينا الآن وسنخبركِ بكل التفاصيل.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="solid">
+  <div class="foot">
+    <div>
+      <p class="store" data-i18n="foot.store">توب لاين · Top Line</p>
+      <p class="where" data-i18n="foot.where">الخليل، فلسطين</p>
+    </div>
+    <div class="phone-row">
+      <span class="phone selectable" id="phoneTxt">+970 594 310 367</span>
+      <button class="chip-btn" type="button" id="copyPhone"><span data-i18n="foot.copy">نسخ الرقم</span></button>
+    </div>
+    <div class="foot-links">
+      <a class="btn btn-line" href="https://www.facebook.com/profile.php?id=61591989787073" target="_blank" rel="noopener"><span data-i18n="foot.fb">صفحتنا على فيسبوك</span></a>
+      <a class="btn btn-line" href="https://m.me/61591989787073" target="_blank" rel="noopener"><span data-i18n="cta.messengerShort">ماسنجر</span></a>
+    </div>
+    <p class="fine">BlackSeed — Professional Hair Care · Top Line, Hebron</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <a class="btn btn-gold" href="https://m.me/61591989787073" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.1 2 11.3c0 2.9 1.4 5.5 3.7 7.2V22l3.4-1.9c.9.3 1.9.4 2.9.4 5.5 0 10-4.1 10-9.2S17.5 2 12 2zm1 12.4-2.5-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.5 5.8z"/></svg>
+    <span data-i18n="cta.dock">اطلبي الآن</span>
+  </a>
+  <a class="btn btn-line" href="tel:+970594310367" aria-label="+970 594 310 367">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>
+    <bdi dir="ltr">0594 310 367</bdi>
+  </a>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== copy, language, page chrome (runs with or without 3D) ===== */
+(function(){
+  // Set the set's price here when it is decided, e.g. { ar: "180 ₪", en: "₪180" }. null keeps "ask us on Messenger".
+  var PRICE = null;
+
+  var T = {
+    ar: {
+      "hero.eyebrow":"مجموعة BlackSeed · من توب لاين، الخليل",
+      "hero.title":"عناية احترافية… بين يديكِ",
+      "hero.lede":"أربع خطوات متكاملة لعناية الشعر: شامبو، ماسك، سيروم، وعطر للشعر، في علبة هدية واحدة.",
+      "hero.explore":"اكتشفي الروتين",
+      "hero.hint":"اسحبي لتدوير المجموعة، واضغطي على أي منتج",
+      "cta.messenger":"اطلبيها الآن عبر ماسنجر",
+      "cta.messengerShort":"ماسنجر",
+      "cta.call":"اتصلي بنا",
+      "cta.dock":"اطلبي الآن",
+      "p.shampoo":"الشامبو","p.mask":"الماسك","p.serum":"سيروم الشعر","p.perfume":"عطر الشعر",
+      "s1.k":"الخطوة الأولى · نظّفي","s1.b":"تركيبة خالية من السلفات والملح، مخصّصة للشعر الجاف والمصبوغ.",
+      "s1.t1":"خالٍ من السلفات","s1.t2":"خالٍ من الملح","s1.t3":"للشعر الجاف والمصبوغ",
+      "s2.k":"الخطوة الثانية · غذّي","s2.b":"ماسك للشعر الجاف والمتضرر، يأتي مباشرة بعد الشامبو.",
+      "s2.t1":"للشعر الجاف والمتضرر","s2.t2":"بعد الشامبو",
+      "s3.k":"الخطوة الثالثة · لمعة","s3.b":"قطرات قليلة تمنح شعركِ لمعة حريرية.",
+      "s3.t1":"لمعة حريرية","s3.t2":"زجاج كهرماني",
+      "s4.k":"الخطوة الرابعة · عطّري","s4.b":"اللمسة الأخيرة: رائحة تدوم على شعركِ.",
+      "s4.t1":"رائحة تدوم","s4.t2":"اللمسة الأخيرة",
+      "ui.spin":"تدوير 360°","ui.spinBox":"دوّري العلبة","ui.swipe":"اسحبي يمينًا ويسارًا للتدوير","ui.tilt":"إمالة",
+      "ui.tiltOff":"الإمالة غير متاحة في هذا العرض. اسحبي بإصبعكِ للتدوير.",
+      "box.k":"مجموعة العناية المتكاملة","box.t":"الروتين كاملًا… في علبة واحدة",
+      "box.b":"علبة هدية بيضاء تجمع المنتجات الأربعة، جاهزة لكِ أو لمن تحبّين.",
+      "box.priceLabel":"السعر","box.priceAsk":"اسألينا عبر ماسنجر","box.cta":"اطلبي المجموعة الآن",
+      "film.k":"من الحملة","film.t":"لحظة عناية يومية","film.b":"من الشامبو إلى آخر رشّة عطر، روتين BlackSeed يرافقكِ خطوة بخطوة.",
+      "order.k":"الطلب","order.t":"كيف تطلبين؟",
+      "order.s1":"راسلينا على ماسنجر أو اتصلي بنا.","order.s2":"أرسلي اسمكِ وعنوانكِ ورقم هاتفكِ.","order.s3":"نؤكّد معكِ الطلب وموعد التوصيل.",
+      "faq.q1":"ماذا تحتوي المجموعة؟","faq.a1":"شامبو 1000 مل، ماسك 500 مل، سيروم شعر 120 مل، وعطر شعر 50 مل، داخل علبة هدية بيضاء.",
+      "faq.q2":"لأي نوع شعر تناسب؟","faq.a2":"الشامبو خالٍ من السلفات والملح ومخصّص للشعر الجاف والمصبوغ، والماسك للشعر الجاف والمتضرر.",
+      "faq.q3":"بأي ترتيب أستخدمها؟","faq.a3":"الشامبو أولًا، ثم الماسك، ثم السيروم للمعة، وأخيرًا عطر الشعر.",
+      "faq.q4":"كم السعر وتكلفة التوصيل؟","faq.a4":"تُعلَن الأسعار وتفاصيل التوصيل قريبًا.","faq.a4b":"راسلينا الآن وسنخبركِ بكل التفاصيل.",
+      "foot.store":"توب لاين · Top Line","foot.where":"الخليل، فلسطين","foot.copy":"نسخ الرقم","foot.copied":"تم نسخ الرقم","foot.copyFail":"حدّدي الرقم وانسخيه يدويًا","foot.fb":"صفحتنا على فيسبوك",
+      "rail":"الروتين","langLabel":"Switch to English"
+    },
+    en: {
+      "hero.eyebrow":"BlackSeed Collection · by Top Line, Hebron",
+      "hero.title":"Professional care, in your hands",
+      "hero.lede":"A complete four-step hair-care ritual: shampoo, mask, serum and hair perfume, together in one gift box.",
+      "hero.explore":"Explore the ritual",
+      "hero.hint":"Drag to turn the collection · tap any product",
+      "cta.messenger":"Order now on Messenger",
+      "cta.messengerShort":"Messenger",
+      "cta.call":"Call us",
+      "cta.dock":"Order now",
+      "p.shampoo":"Shampoo","p.mask":"Mask","p.serum":"Hair Serum","p.perfume":"Hair Perfume",
+      "s1.k":"Step one · Cleanse","s1.b":"Sulfate-free and salt-free, made for dry and colored hair.",
+      "s1.t1":"SLS free","s1.t2":"Salt free","s1.t3":"Dry & colored hair",
+      "s2.k":"Step two · Nourish","s2.b":"A mask for dry and damaged hair, used right after shampoo.",
+      "s2.t1":"Dry & damaged hair","s2.t2":"After shampoo",
+      "s3.k":"Step three · Shine","s3.b":"A few drops for a silky shine.",
+      "s3.t1":"Silky shine","s3.t2":"Amber glass",
+      "s4.k":"Step four · Scent","s4.b":"The final touch: a scent that lasts in your hair.",
+      "s4.t1":"Lasting scent","s4.t2":"The final touch",
+      "ui.spin":"Spin 360°","ui.spinBox":"Spin the box","ui.swipe":"Swipe sideways to rotate","ui.tilt":"Tilt",
+      "ui.tiltOff":"Tilt isn't available in this view. Drag with your finger to rotate.",
+      "box.k":"The Complete Collection","box.t":"The whole ritual, in one box",
+      "box.b":"A white gift box holding all four products, ready for you or someone you love.",
+      "box.priceLabel":"Price","box.priceAsk":"Ask us on Messenger","box.cta":"Order the set now",
+      "film.k":"From the campaign","film.t":"A daily moment of care","film.b":"From shampoo to the last mist of perfume, the BlackSeed ritual walks with you step by step.",
+      "order.k":"Ordering","order.t":"How to order",
+      "order.s1":"Message us on Messenger or give us a call.","order.s2":"Send your name, address and phone number.","order.s3":"We confirm your order and delivery time with you.",
+      "faq.q1":"What's in the set?","faq.a1":"Shampoo 1000 ml, mask 500 ml, hair serum 120 ml and hair perfume 50 ml, in a white gift box.",
+      "faq.q2":"Which hair is it for?","faq.a2":"The shampoo is sulfate-free and salt-free, made for dry and colored hair. The mask is for dry and damaged hair.",
+      "faq.q3":"In what order do I use them?","faq.a3":"Shampoo first, then the mask, then the serum for shine, and hair perfume last.",
+      "faq.q4":"What do the set and delivery cost?","faq.a4":"Prices and delivery details are coming soon.","faq.a4b":"Message us now and we'll share every detail.",
+      "foot.store":"Top Line · توب لاين","foot.where":"Hebron, Palestine","foot.copy":"Copy number","foot.copied":"Number copied","foot.copyFail":"Select the number and copy it manually","foot.fb":"Our Facebook page",
+      "rail":"Ritual","langLabel":"التبديل إلى العربية"
+    }
+  };
+
+  var root = document.documentElement;
+  root.classList.add("js");
+  var lang = "ar";
+  try { var saved = localStorage.getItem("bs-lang"); if (saved === "en" || saved === "ar") lang = saved; } catch (e) {}
+
+  var toastEl = document.getElementById("toast"), toastTimer;
+  function toast(msg){
+    toastEl.textContent = msg; toastEl.classList.add("on");
+    clearTimeout(toastTimer); toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2600);
+  }
+
+  function applyLang(l){
+    lang = l;
+    var d = T[l];
+    root.lang = l; root.dir = l === "ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n"); if (d[k] != null) el.textContent = d[k];
+    });
+    if (PRICE && PRICE[l]) document.getElementById("priceVal").textContent = PRICE[l];
+    var lb = document.getElementById("langBtn");
+    lb.innerHTML = l === "ar" ? '<span class="en">EN</span>' : '<span class="ar">ع</span>';
+    lb.setAttribute("aria-label", d.langLabel);
+    document.getElementById("rail").setAttribute("aria-label", d.rail);
+    try { localStorage.setItem("bs-lang", l); } catch (e) {}
+    window.dispatchEvent(new CustomEvent("bs:lang", { detail: l }));
+  }
+  applyLang(lang);
+  document.getElementById("langBtn").addEventListener("click", function(){ applyLang(lang === "ar" ? "en" : "ar"); });
+
+  // jump links (hotspots, rail, explore)
+  function go(id){
+    var el = document.getElementById(id); if (!el) return;
+    var top = el.getBoundingClientRect().top + window.scrollY + el.offsetHeight / 2 - window.innerHeight / 2;
+    window.scrollTo({ top: Math.max(0, top), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }
+  window.bsGo = go;
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-go]"); if (!t) return;
+    e.preventDefault(); go(t.getAttribute("data-go"));
+  });
+
+  // copy phone
+  document.getElementById("copyPhone").addEventListener("click", function(){
+    var num = "+970594310367";
+    var ok = function(){ toast(T[lang]["foot.copied"]); };
+    var fail = function(){
+      var r = document.createRange(); r.selectNodeContents(document.getElementById("phoneTxt"));
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r); toast(T[lang]["foot.copyFail"]);
+    };
+    try { navigator.clipboard.writeText(num).then(ok, fail); } catch (e) { fail(); }
+  });
+
+  // dock + rail + reveal + film video
+  var dock = document.getElementById("dock"), rail = document.getElementById("rail"), topBar = document.querySelector(".top");
+  var railBtns = rail.querySelectorAll("button");
+  var steps = [1,2,3,4].map(function(i){ return document.getElementById("step" + i); });
+  function onScroll(){
+    var vh = window.innerHeight, y = window.scrollY;
+    dock.classList.toggle("on", y > vh * 0.45);
+    topBar.classList.toggle("solid", document.getElementById("film").getBoundingClientRect().top < 80);
+    var active = -1;
+    steps.forEach(function(s, i){ var r = s.getBoundingClientRect(); if (r.top < vh * 0.55 && r.bottom > vh * 0.45) active = i; });
+    rail.classList.toggle("on", active >= 0);
+    railBtns.forEach(function(b, i){ b.classList.toggle("on", i === active); });
+  }
+  addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll); onScroll();
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(function(el){ io.observe(el); });
+    var vid = document.getElementById("filmVid");
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (en.isIntersecting) { vid.preload = "auto"; if (!reduce) { var p = vid.play(); if (p && p.catch) p.catch(function(){}); } }
+        else vid.pause();
+      });
+    }, { threshold: 0.2 }).observe(vid);
+    if (reduce) vid.controls = true;
+  } else {
+    document.querySelectorAll("[data-reveal]").forEach(function(el){ el.classList.add("in"); });
+  }
+
+  // gyroscope tilt: offered on touch devices; the 3D module listens for bs:tilt
+  var gyroBtn = document.getElementById("gyroBtn");
+  if (window.DeviceOrientationEvent && matchMedia("(pointer: coarse)").matches) {
+    if (typeof DeviceOrientationEvent.requestPermission === "function") gyroBtn.hidden = false;
+    else {
+      var sniff = function(e){ if (e.beta != null || e.gamma != null) { gyroBtn.hidden = false; removeEventListener("deviceorientation", sniff); } };
+      addEventListener("deviceorientation", sniff);
+    }
+  }
+  var gyroOn = false, gotEvent = false;
+  function onOrient(e){
+    if (e.beta == null && e.gamma == null) return;
+    gotEvent = true;
+    window.dispatchEvent(new CustomEvent("bs:tilt", { detail: { x: e.gamma || 0, y: e.beta || 0 } }));
+  }
+  function tiltUnavailable(){
+    gyroOn = false; gyroBtn.setAttribute("aria-pressed", "false"); gyroBtn.hidden = true;
+    removeEventListener("deviceorientation", onOrient); toast(T[lang]["ui.tiltOff"]);
+  }
+  gyroBtn.addEventListener("click", function(){
+    if (gyroOn) {
+      gyroOn = false; gyroBtn.setAttribute("aria-pressed", "false");
+      removeEventListener("deviceorientation", onOrient);
+      window.dispatchEvent(new CustomEvent("bs:tilt", { detail: null }));
+      return;
+    }
+    var start = function(){
+      gyroOn = true; gotEvent = false; gyroBtn.setAttribute("aria-pressed", "true");
+      addEventListener("deviceorientation", onOrient);
+      setTimeout(function(){ if (gyroOn && !gotEvent) tiltUnavailable(); }, 1800);
+    };
+    try {
+      if (typeof DeviceOrientationEvent.requestPermission === "function") {
+        DeviceOrientationEvent.requestPermission().then(function(s){ s === "granted" ? start() : tiltUnavailable(); }, tiltUnavailable);
+      } else start();
+    } catch (e) { tiltUnavailable(); }
+  });
+
+  // if the 3D stage hasn't come up, show the photographic fallback
+  function no3d(){ if (!root.classList.contains("is3d")) root.classList.add("no3d"); }
+  var probe = document.createElement("canvas");
+  var gl = null; try { gl = probe.getContext("webgl2") || probe.getContext("webgl"); } catch (e) {}
+  if (!gl) no3d(); else setTimeout(no3d, 9000);
+  window.bsNo3d = no3d;
+})();
+</script>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+
+<script type="module">
+import * as THREE from "three";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+
+const root = document.documentElement;
+if (root.classList.contains("no3d")) throw new Error("no webgl");
+
+const canvas = document.getElementById("stage");
+const reduceMQ = matchMedia("(prefers-reduced-motion: reduce)");
+let reduce = reduceMQ.matches;
+reduceMQ.addEventListener?.("change", e => reduce = e.matches);
+const coarse = matchMedia("(pointer: coarse)").matches;
+const lite = coarse || (navigator.hardwareConcurrency || 8) <= 4;
+
+/* ---------- renderer ---------- */
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: !lite || devicePixelRatio < 2, alpha: true, powerPreference: "high-performance" });
+} catch (e) { window.bsNo3d?.(); throw e; }
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+renderer.setClearColor(0x000000, 0);
+renderer.autoClear = false;
+let maxPR = lite ? 1.5 : 2;
+let pr = Math.min(devicePixelRatio || 1, maxPR);
+renderer.setPixelRatio(pr);
+const aniso = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 80);
+
+/* ---------- environment: a warm studio painted on canvas ---------- */
+function makeEnv(){
+  const c = document.createElement("canvas"); c.width = 1024; c.height = 512;
+  const g = c.getContext("2d");
+  const bg = g.createLinearGradient(0, 0, 0, 512);
+  bg.addColorStop(0, "#2a2016"); bg.addColorStop(.45, "#0e0b08"); bg.addColorStop(1, "#060504");
+  g.fillStyle = bg; g.fillRect(0, 0, 1024, 512);
+  const soft = (x, y, w, h, col, blur) => { g.save(); g.filter = `blur(${blur}px)`; g.fillStyle = col; g.fillRect(x, y, w, h); g.restore(); };
+  soft(330, 18, 360, 70, "#fff7e6", 10);      // overhead softbox
+  soft(120, 140, 60, 230, "#ffdca6", 8);      // warm strip left
+  soft(842, 140, 60, 230, "#ffe9c4", 8);      // warm strip right
+  soft(470, 170, 90, 170, "#f2c77a", 18);     // front fill
+  g.save(); g.filter = "blur(4px)"; g.strokeStyle = "#e1b25a"; g.lineWidth = 9;
+  g.beginPath(); g.ellipse(512, 250, 330, 120, 0, 0, Math.PI * 2); g.stroke(); g.restore();
+  const fl = g.createLinearGradient(0, 380, 0, 512); fl.addColorStop(0, "rgba(90,60,25,0)"); fl.addColorStop(1, "rgba(90,60,25,.55)");
+  g.fillStyle = fl; g.fillRect(0, 380, 1024, 132);
+  const tex = new THREE.CanvasTexture(c);
+  tex.mapping = THREE.EquirectangularReflectionMapping;
+  tex.colorSpace = THREE.SRGBColorSpace;
+  const pm = new THREE.PMREMGenerator(renderer);
+  const env = pm.fromEquirectangular(tex).texture;
+  tex.dispose(); pm.dispose();
+  return env;
+}
+scene.environment = makeEnv();
+
+const key = new THREE.DirectionalLight(0xffe2b8, 1.6); key.position.set(3, 6, 5); scene.add(key);
+const rim = new THREE.DirectionalLight(0xffd08a, 1.4); rim.position.set(-4, 4, -4); scene.add(rim);
+scene.add(new THREE.AmbientLight(0xfff0dd, 0.12));
+
+/* ---------- helpers ---------- */
+const sRGB = h => new THREE.Color(h);
+function canvasTex(w, h, draw){
+  const c = document.createElement("canvas"); c.width = w; c.height = h;
+  const g = c.getContext("2d"); draw(g, w, h);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = aniso;
+  return t;
+}
+function spaced(g, text, x, y, px){
+  if ("letterSpacing" in g) { g.letterSpacing = px + "px"; g.fillText(text, x + px / 2, y); g.letterSpacing = "0px"; return; }
+  const chars = [...text]; let total = 0; chars.forEach(ch => total += g.measureText(ch).width + px); total -= px;
+  let cx = x - total / 2; const al = g.textAlign; g.textAlign = "left";
+  chars.forEach(ch => { g.fillText(ch, cx, y); cx += g.measureText(ch).width + px; }); g.textAlign = al;
+}
+function wordmark(g, cx, y, size, ink, rule){
+  g.fillStyle = ink; g.textAlign = "center"; g.textBaseline = "alphabetic";
+  g.font = `500 ${size}px Montserrat, Arial, sans-serif`;
+  spaced(g, "BlackSeed", cx, y, size * -0.01);
+  const w = g.measureText("BlackSeed").width;
+  g.fillStyle = rule || ink; g.fillRect(cx - w / 2, y + size * 0.16, w, Math.max(2, size * 0.035));
+  g.fillStyle = ink; g.font = `500 ${size * 0.2}px Montserrat, Arial, sans-serif`;
+  spaced(g, "PROFESSIONAL HAIR CARE", cx, y + size * 0.48, size * 0.035);
+}
+const labelMat = map => new THREE.MeshStandardMaterial({ map, transparent: true, roughness: .55, metalness: 0, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2 });
+
+function contactShadowTex(){
+  return canvasTex(256, 256, (g) => {
+    const r = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+    r.addColorStop(0, "rgba(0,0,0,.85)"); r.addColorStop(.45, "rgba(0,0,0,.45)"); r.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = r; g.fillRect(0, 0, 256, 256);
+  });
+}
+const shadowTex = contactShadowTex();
+
+/* ---------- materials ---------- */
+const M = {
+  plastic: () => new THREE.MeshPhysicalMaterial({ color: sRGB("#f1ece2"), roughness: .36, clearcoat: .55, clearcoatRoughness: .3, envMapIntensity: 1.1 }),
+  black:   () => new THREE.MeshPhysicalMaterial({ color: sRGB("#0c0b0a"), roughness: .16, clearcoat: 1, clearcoatRoughness: .08, envMapIntensity: 1.4 }),
+  gold:    () => new THREE.MeshStandardMaterial({ color: sRGB("#e6bf72"), metalness: 1, roughness: .2, envMapIntensity: 1.5 }),
+  glass:   () => lite
+    ? new THREE.MeshPhysicalMaterial({ color: sRGB("#fff8ec"), roughness: .02, metalness: .3, transparent: true, opacity: .55, blending: THREE.AdditiveBlending, clearcoat: 1, envMapIntensity: 2.4, depthWrite: false })
+    : new THREE.MeshPhysicalMaterial({ color: sRGB("#ffffff"), roughness: .05, metalness: 0, transmission: 1, thickness: .35, ior: 1.5, clearcoat: 1, envMapIntensity: 1.6 }),
+  liquid:  (col, glow) => new THREE.MeshPhysicalMaterial({ color: sRGB(col), roughness: .06, metalness: .25, clearcoat: 1, clearcoatRoughness: .03, emissive: sRGB(glow), emissiveIntensity: .7, envMapIntensity: 1.8, transparent: lite, opacity: lite ? .88 : 1 }),
+  card:    () => new THREE.MeshStandardMaterial({ color: sRGB("#f3f1ec"), roughness: .72, metalness: 0, envMapIntensity: 1, side: THREE.DoubleSide }),
+};
+const L = (pts) => pts.map(([x, y]) => new THREE.Vector2(x, y));
+
+/* ---------- products ---------- */
+function shampoo(){
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.LatheGeometry(L([[0,0],[.43,0],[.48,.02],[.5,.07],[.5,1.5],[.495,1.6],[.47,1.7],[.41,1.79],[.31,1.86],[.21,1.9],[.17,1.92],[.17,1.98],[0,1.98]]), 72), M.plastic());
+  g.add(body);
+  const blk = M.black();
+  const collar = new THREE.Mesh(new THREE.CylinderGeometry(.19, .19, .16, 48), blk); collar.position.y = 2.02; g.add(collar);
+  const stem = new THREE.Mesh(new THREE.CylinderGeometry(.045, .045, .14, 24), blk); stem.position.y = 2.17; g.add(stem);
+  const head = new THREE.Mesh(new RoundedBoxGeometry(.24, .1, .2, 3, .035), blk); head.position.y = 2.27; g.add(head);
+  const spout = new THREE.Mesh(new RoundedBoxGeometry(.3, .055, .07, 2, .02), blk); spout.position.set(-.2, 2.28, 0); g.add(spout);
+  const tex = canvasTex(900, 1024, (c, w) => {
+    const ink = "#16120e";
+    wordmark(c, w / 2, 300, 142, ink);
+    c.fillStyle = ink; c.textAlign = "center";
+    c.font = "600 96px Montserrat, Arial, sans-serif"; spaced(c, "SHAMPOO", w / 2, 590, 6);
+    c.font = "400 46px Montserrat, Arial, sans-serif"; c.fillText("for dry & colored hair", w / 2, 660);
+    c.fillStyle = "#b8924a"; c.fillRect(w / 2 - 60, 735, 120, 3);
+    c.fillStyle = ink; c.font = "500 44px Montserrat, Arial, sans-serif"; spaced(c, "SLS FREE · SALT FREE", w / 2, 840, 3);
+    c.font = "600 56px Montserrat, Arial, sans-serif"; c.fillText("1000 ml", w / 2, 935);
+  });
+  const arc = 2.1;
+  const label = new THREE.Mesh(new THREE.CylinderGeometry(.503, .503, 1.2, 48, 1, true, -arc / 2, arc), labelMat(tex));
+  label.position.y = .82; g.add(label);
+  return { group: g, h: 2.33, foot: 1.25 };
+}
+function mask(){
+  const g = new THREE.Group();
+  const body = new THREE.Mesh(new THREE.LatheGeometry(L([[0,0],[.5,0],[.55,.025],[.575,.08],[.61,.3],[.632,.5],[.63,.56],[0,.56]]), 80), M.plastic());
+  g.add(body);
+  const lid = new THREE.Mesh(new THREE.LatheGeometry(L([[0,.55],[.648,.55],[.655,.58],[.655,.72],[.645,.755],[.62,.77],[0,.77]]), 80), M.black());
+  g.add(lid);
+  const tex = canvasTex(1500, 410, (c, w) => {
+    const ink = "#16120e";
+    wordmark(c, w / 2, 150, 118, ink);
+    c.fillStyle = ink; c.textAlign = "center";
+    c.font = "600 58px Montserrat, Arial, sans-serif"; spaced(c, "MASK", w / 2, 300, 8);
+    c.font = "400 34px Montserrat, Arial, sans-serif"; c.fillText("for dry & damaged hair  ·  500 ml", w / 2, 368);
+  });
+  const arc = 2.25;
+  const label = new THREE.Mesh(new THREE.CylinderGeometry(.6335, .589, .4, 64, 1, true, -arc / 2, arc), labelMat(tex));
+  label.position.y = .31; g.add(label);
+  return { group: g, h: .77, foot: 1.55 };
+}
+function serum(){
+  const g = new THREE.Group();
+  const glassPts = [[0,0],[.19,0],[.215,.012],[.222,.04],[.222,.92],[.21,.99],[.17,1.04],[.1,1.07],[.075,1.08],[.075,1.13],[0,1.13]];
+  const shell = new THREE.Mesh(new THREE.LatheGeometry(L(glassPts), 64), M.glass()); g.add(shell);
+  const liq = new THREE.Mesh(new THREE.LatheGeometry(L([[0,.05],[.188,.05],[.196,.07],[.196,.86],[0,.86]]), 48), M.liquid("#d79a26", "#6b3d04"));
+  g.add(liq);
+  const gold = M.gold();
+  const collar = new THREE.Mesh(new THREE.CylinderGeometry(.1, .1, .16, 40), gold); collar.position.y = 1.16; g.add(collar);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(.1, .012, 12, 40), gold); ring.rotation.x = Math.PI / 2; ring.position.y = 1.08; g.add(ring);
+  const pump = new THREE.Mesh(new THREE.CylinderGeometry(.06, .07, .14, 24), M.plastic()); pump.position.y = 1.31; g.add(pump);
+  const cap = new THREE.Mesh(new THREE.CylinderGeometry(.118, .118, .38, 40, 1), M.glass()); cap.position.y = 1.43; g.add(cap);
+  const tex = canvasTex(660, 820, (c, w) => {
+    const ink = "#1b130a";
+    wordmark(c, w / 2, 230, 104, ink, "#8a6420");
+    c.fillStyle = ink; c.textAlign = "center";
+    c.font = "600 78px Montserrat, Arial, sans-serif"; spaced(c, "HAIR", w / 2, 450, 6); spaced(c, "SERUM", w / 2, 540, 6);
+    c.font = "500 46px Montserrat, Arial, sans-serif"; c.fillText("120 ml", w / 2, 720);
+  });
+  const arc = 2.0;
+  const label = new THREE.Mesh(new THREE.CylinderGeometry(.226, .226, .56, 32, 1, true, -arc / 2, arc), labelMat(tex));
+  label.position.y = .47; g.add(label);
+  return { group: g, h: 1.62, foot: .75 };
+}
+function perfume(){
+  const g = new THREE.Group();
+  const shell = new THREE.Mesh(new RoundedBoxGeometry(.8, .86, .42, 4, .07), M.glass()); shell.position.y = .43; g.add(shell);
+  const liq = new THREE.Mesh(new RoundedBoxGeometry(.64, .62, .28, 3, .04), M.liquid("#a8541a", "#7a3208")); liq.position.y = .4; g.add(liq);
+  const tube = new THREE.Mesh(new THREE.CylinderGeometry(.008, .008, .75, 8), new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: .5, roughness: .2 }));
+  tube.position.y = .45; g.add(tube);
+  const gold = M.gold();
+  const neck = new THREE.Mesh(new THREE.CylinderGeometry(.085, .085, .07, 32), gold); neck.position.y = .895; g.add(neck);
+  const cap = new THREE.Mesh(new THREE.CylinderGeometry(.14, .14, .36, 48), gold); cap.position.y = 1.11; g.add(cap);
+  const capTop = new THREE.Mesh(new THREE.CylinderGeometry(.13, .14, .012, 48), gold); capTop.position.y = 1.296; g.add(capTop);
+  const tex = canvasTex(930, 800, (c, w) => {
+    const ink = "#1a1008";
+    wordmark(c, w / 2, 240, 128, ink, "#7c5418");
+    c.fillStyle = ink; c.textAlign = "center";
+    c.font = "600 74px Montserrat, Arial, sans-serif"; spaced(c, "HAIR", w / 2, 460, 6); spaced(c, "PERFUME", w / 2, 550, 6);
+    c.font = "500 46px Montserrat, Arial, sans-serif"; c.fillText("50 ml", w / 2, 700);
+  });
+  const label = new THREE.Mesh(new THREE.PlaneGeometry(.62, .533), labelMat(tex)); label.position.set(0, .43, .2115); g.add(label);
+  return { group: g, h: 1.31, foot: 1.15 };
+}
+function giftBox(){
+  const g = new THREE.Group();
+  const W = 1.7, H = 1.55, D = 1.15, card = M.card();
+  const body = new THREE.Mesh(new THREE.BoxGeometry(W, H, D), card); body.position.y = H / 2; g.add(body);
+  const rise = .28, ridge = .04, run = D / 2 - ridge, ang = Math.atan2(rise, run), len = Math.hypot(rise, run);
+  [1, -1].forEach(s => {
+    const p = new THREE.Mesh(new THREE.PlaneGeometry(W, len), card);
+    p.rotation.x = -s * (Math.PI / 2 - ang); if (s < 0) p.rotation.x = Math.PI / 2 - ang + Math.PI;
+    p.position.set(0, H + rise / 2, s * (ridge + run / 2)); g.add(p);
+    const sh = new THREE.Shape(); sh.moveTo(-D / 2, 0); sh.lineTo(D / 2, 0); sh.lineTo(ridge, rise); sh.lineTo(-ridge, rise); sh.closePath();
+    const end = new THREE.Mesh(new THREE.ShapeGeometry(sh), card); end.rotation.y = Math.PI / 2; end.position.set(s * W / 2, H, 0); g.add(end);
+  });
+  const hs = new THREE.Shape();
+  hs.moveTo(-W / 2, 0); hs.lineTo(W / 2, 0);
+  hs.bezierCurveTo(W / 2 - .12, .16, .5, .36, .42, .52); hs.lineTo(-.42, .52); hs.bezierCurveTo(-.5, .36, -W / 2 + .12, .16, -W / 2, 0);
+  const hole = new THREE.Path();
+  hole.absarc(-.17, .34, .065, Math.PI / 2, Math.PI * 1.5, false); hole.lineTo(.17, .275); hole.absarc(.17, .34, .065, -Math.PI / 2, Math.PI / 2, false); hole.lineTo(-.17, .405);
+  hs.holes.push(hole);
+  const handle = new THREE.Mesh(new THREE.ExtrudeGeometry(hs, { depth: .06, bevelEnabled: false, curveSegments: 20 }), card);
+  handle.position.set(0, H + rise - .02, -.03); g.add(handle);
+  const front = canvasTex(1300, 600, (c, w) => { wordmark(c, w / 2, 300, 230, "#141210"); });
+  const fl = new THREE.Mesh(new THREE.PlaneGeometry(1.32, .61), labelMat(front)); fl.position.set(0, H * .5, D / 2 + .002); g.add(fl);
+  const bl = fl.clone(); bl.rotation.y = Math.PI; bl.position.z = -D / 2 - .002; g.add(bl);
+  const side = canvasTex(900, 600, (c, w) => { wordmark(c, w / 2, 300, 150, "#141210"); });
+  [1, -1].forEach(s => { const sl = new THREE.Mesh(new THREE.PlaneGeometry(.9, .6), labelMat(side)); sl.rotation.y = s * Math.PI / 2; sl.position.set(s * (W / 2 + .002), H * .5, 0); g.add(sl); });
+  return { group: g, h: 2.35, foot: 2.6 };
+}
+
+/* ---------- stage: marble floor, gold rings, light ---------- */
+function marble(){
+  const S = 1024;
+  const base = document.createElement("canvas"); base.width = base.height = S;
+  const veins = document.createElement("canvas"); veins.width = veins.height = S;
+  const g = base.getContext("2d"), v = veins.getContext("2d");
+  g.fillStyle = "#0b0a09"; g.fillRect(0, 0, S, S);
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < 70; i++) {
+    const x = rnd() * S, y = rnd() * S, r = 60 + rnd() * 220;
+    const gr = g.createRadialGradient(x, y, 0, x, y, r);
+    gr.addColorStop(0, `rgba(${30 + rnd() * 18},${26 + rnd() * 12},${22 + rnd() * 8},.35)`); gr.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = gr; g.fillRect(0, 0, S, S);
+  }
+  v.fillStyle = "#000"; v.fillRect(0, 0, S, S);
+  const drawVein = (ctx, alpha, width, color) => {
+    let x = rnd() * S, y = rnd() * S, a = rnd() * Math.PI * 2;
+    ctx.beginPath(); ctx.moveTo(x, y);
+    const n = 80 + rnd() * 120;
+    for (let i = 0; i < n; i++) { a += (rnd() - .5) * .7; x += Math.cos(a) * 9; y += Math.sin(a) * 9; ctx.lineTo(x, y); }
+    ctx.strokeStyle = color.replace("A", alpha); ctx.lineWidth = width; ctx.stroke();
+  };
+  for (let i = 0; i < 15; i++) {
+    const s0 = seed, w = .6 + rnd() * 2.2, al = .25 + rnd() * .55;
+    g.save(); g.shadowColor = "rgba(216,170,90,.8)"; g.shadowBlur = 6; drawVein(g, al, w, "rgba(205,165,95,A)"); g.restore();
+    seed = s0; drawVein(v, al, w + .5, "rgba(255,220,160,A)");
+  }
+  const mk = (c, color) => { const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(3, 3); t.anisotropy = aniso; if (color) t.colorSpace = THREE.SRGBColorSpace; return t; };
+  return { map: mk(base, true), em: mk(veins, true) };
+}
+const mt = marble();
+const fade = canvasTex(512, 512, (g) => {
+  const r = g.createRadialGradient(256, 256, 0, 256, 256, 256);
+  r.addColorStop(0, "#fff"); r.addColorStop(.5, "#d0d0d0"); r.addColorStop(1, "#000");
+  g.fillStyle = r; g.fillRect(0, 0, 512, 512);
+});
+fade.colorSpace = THREE.NoColorSpace;
+const floorMat = new THREE.MeshStandardMaterial({
+  map: mt.map, emissiveMap: mt.em, emissive: sRGB("#c9973f"), emissiveIntensity: .16,
+  roughness: .18, metalness: .1, envMapIntensity: .9, transparent: true, opacity: .8, alphaMap: fade, depthWrite: false,
+});
+const floor = new THREE.Mesh(new THREE.CircleGeometry(16, 96), floorMat);
+floor.rotation.x = -Math.PI / 2; scene.add(floor);
+
+const world = new THREE.Group(); scene.add(world);
+const goldM = M.gold();
+const ringBig = new THREE.Mesh(new THREE.TorusGeometry(2.75, .075, 24, 180), goldM);
+ringBig.position.set(0, 2.75, -2.9); world.add(ringBig);
+const ringThin = new THREE.Mesh(new THREE.TorusGeometry(2.35, .018, 12, 160), goldM);
+ringThin.position.set(0, 2.75, -2.75); world.add(ringThin);
+const inlay = new THREE.Mesh(new THREE.TorusGeometry(2.25, .012, 8, 180), goldM);
+inlay.rotation.x = Math.PI / 2; inlay.position.y = .006; world.add(inlay);
+
+const halo = new THREE.Sprite(new THREE.SpriteMaterial({
+  map: canvasTex(256, 256, (g) => { const r = g.createRadialGradient(128, 128, 0, 128, 128, 128); r.addColorStop(0, "rgba(255,214,140,.55)"); r.addColorStop(.4, "rgba(216,160,80,.18)"); r.addColorStop(1, "rgba(0,0,0,0)"); g.fillStyle = r; g.fillRect(0, 0, 256, 256); }),
+  blending: THREE.AdditiveBlending, depthWrite: false, transparent: true,
+}));
+halo.scale.set(9, 9, 1); halo.position.set(0, 2.4, -3.2); scene.add(halo);
+
+const beamMat = new THREE.ShaderMaterial({
+  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+  uniforms: { uO: { value: .55 } },
+  vertexShader: `varying float vY; varying float vF; void main(){ vY = uv.y; vec3 n = normalize(normalMatrix*normal); vec4 mv = modelViewMatrix*vec4(position,1.); vF = abs(dot(n, normalize(-mv.xyz))); gl_Position = projectionMatrix*mv; }`,
+  fragmentShader: `uniform float uO; varying float vY; varying float vF; void main(){ float a = pow(vY, 1.6) * pow(vF, 2.5) * .16 * uO; gl_FragColor = vec4(vec3(1.,.83,.55)*a, a); }`,
+});
+const beam = new THREE.Mesh(new THREE.ConeGeometry(2.3, 8, 48, 1, true), beamMat);
+beam.position.y = 4; scene.add(beam);
+
+/* gold dust */
+const DUST = lite ? 220 : 420;
+const dPos = new Float32Array(DUST * 3), dSeed = new Float32Array(DUST);
+for (let i = 0; i < DUST; i++) {
+  const r = 1 + Math.random() * 4.2, a = Math.random() * Math.PI * 2;
+  dPos[i * 3] = Math.cos(a) * r; dPos[i * 3 + 1] = Math.random() * 6; dPos[i * 3 + 2] = Math.sin(a) * r - .6; dSeed[i] = Math.random();
+}
+const dGeo = new THREE.BufferGeometry();
+dGeo.setAttribute("position", new THREE.BufferAttribute(dPos, 3)); dGeo.setAttribute("aSeed", new THREE.BufferAttribute(dSeed, 1));
+const dustMat = new THREE.ShaderMaterial({
+  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  uniforms: { uTime: { value: 0 }, uPR: { value: pr }, uBoost: { value: 0 }, uA: { value: 1 } },
+  vertexShader: `attribute float aSeed; uniform float uTime, uPR, uBoost; varying float vA;
+    void main(){ vec3 p = position; float sp = .08 + aSeed*.12 + uBoost*.6;
+      p.y = mod(position.y + uTime*sp, 6.); p.x += sin(uTime*.35 + aSeed*30.)*.18; p.z += cos(uTime*.3 + aSeed*20.)*.18;
+      vec4 mv = modelViewMatrix*vec4(p,1.); gl_Position = projectionMatrix*mv;
+      float tw = .5 + .5*sin(uTime*(1.5+aSeed*2.) + aSeed*50.);
+      vA = (.25 + tw*.75) * smoothstep(0., .8, p.y) * smoothstep(6., 4.6, p.y) * (1. + uBoost*1.5);
+      gl_PointSize = (3. + aSeed*5.) * uPR * (.6 + tw*.6) * (6. / -mv.z); }`,
+  fragmentShader: `uniform float uA; varying float vA; void main(){ float d = length(gl_PointCoord - .5); float a = smoothstep(.5, 0., d); a *= a * vA * uA; gl_FragColor = vec4(vec3(1., .8, .48) * a, a); }`,
+});
+const dust = new THREE.Points(dGeo, dustMat); scene.add(dust);
+
+/* ---------- build products (labels need the fonts first) ---------- */
+try { await Promise.race([Promise.all([document.fonts.load("500 40px Montserrat"), document.fonts.load("600 40px Montserrat")]), new Promise(r => setTimeout(r, 2500))]); } catch (e) {}
+
+const items = [shampoo(), mask(), serum(), perfume(), giftBox()];
+const shadows = [];
+items.forEach((it, i) => {
+  it.root = new THREE.Group(); it.root.add(it.group); it.root.userData.idx = i; world.add(it.root);
+  it.mats = [];
+  it.group.traverse(o => { if (o.isMesh) { o.userData.idx = i; const m = o.material; if (!it.mats.includes(m)) { m.userData.env = m.envMapIntensity ?? 1; it.mats.push(m); } } });
+  const sh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, opacity: .8 }));
+  sh.rotation.x = -Math.PI / 2; sh.renderOrder = 1; world.add(sh); shadows.push(sh);
+  it.dimNow = 0; it.cur = { x: 0, y: 0, z: 0, ry: 0, s: 1 };
+});
+
+/* ---------- choreography ---------- */
+const stations = [...document.querySelectorAll("[data-station]")];
+let anchors = [];
+function measure(){
+  anchors = stations.map((el, i) => {
+    const top = el.getBoundingClientRect().top + scrollY;
+    return i === 0 ? 0 : top + el.offsetHeight / 2 - innerHeight / 2;
+  });
+}
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+function storyAt(y){
+  if (y <= anchors[0]) return 0;
+  for (let i = 0; i < anchors.length - 1; i++) {
+    if (y < anchors[i + 1]) { const f = (y - anchors[i]) / (anchors[i + 1] - anchors[i]); return i + smooth(.12, .88, f); }
+  }
+  return anchors.length - 1;
+}
+
+const rot = { hero: 0, step: [0, 0, 0, 0], box: 0 };
+let vel = 0;
+const SLOTS = [[-2.5, -2.5], [-.9, -3.4], [.9, -3.4], [2.5, -2.5]];
+const HERO_Y = [.5, 1.35, .95, 1.15];
+const HERO_A = [0, Math.PI * .5, Math.PI, Math.PI * 1.5];
+let aspect = 1, portrait = false, dirSign = root.dir === "rtl" ? 1 : -1;
+
+function station(st, i, t){
+  const bob = reduce ? 0 : Math.sin(t * .9 + i * 1.7);
+  if (st === 0) {
+    if (i === 4) return { x: 0, y: 0, z: -2.2, ry: Math.PI, s: .001, dim: 0 };
+    const R = portrait ? 1.05 : 1.75;
+    const a = HERO_A[i] + rot.hero + (reduce ? 0 : t * .14);
+    const sc = portrait ? .82 : 1;
+    return { x: Math.sin(a) * R, y: HERO_Y[i] * sc + bob * .1, z: Math.cos(a) * R * .9, ry: Math.sin(t * .35 + i) * .45, s: sc, dim: 0 };
+  }
+  if (st >= 1 && st <= 4) {
+    const k = st - 1;
+    if (i === 4) return { x: 0, y: 0, z: -3, ry: Math.PI, s: .001, dim: 1 };
+    if (i === k) return { x: 0, y: .02 + bob * .025, z: .35, ry: -.28 + rot.step[k] + (reduce ? 0 : Math.sin(t * .45) * .22), s: 1, dim: 0 };
+    const sl = SLOTS[i];
+    return { x: sl[0] * (portrait ? .62 : 1), y: 0, z: sl[1], ry: .25, s: .85, dim: .78 };
+  }
+  const L5 = [[1.05, -.45, -.2], [.05, .6, .05], [1.35, .75, -.35], [-1.2, .62, .3], [-.85, -.95, .22]];
+  const [x, z, ry] = L5[i];
+  const c = Math.cos(rot.box), s = Math.sin(rot.box);
+  return { x: x * c + z * s, y: 0, z: -x * s + z * c, ry: ry + rot.box, s: 1, dim: 0 };
+}
+const HEIGHTS = items.map(it => it.h);
+const WIDTHS = [1.0, 1.31, .46, .8];
+function camStation(st){
+  const fov = camera.fov * Math.PI / 180, th = Math.tan(fov / 2), tw = th * aspect;
+  let tx = 0, ty, tz = 0, W, H, el, offX = 0, offY = 0;
+  if (st === 0) { ty = 1.15; W = portrait ? 3.0 : 6.2; H = portrait ? 3.4 : 5.0; el = .3; offY = portrait ? .25 : 0; offX = portrait ? 0 : .2 * dirSign; }
+  else if (st <= 4) { const h = HEIGHTS[st - 1]; ty = h * .5 + .03; tz = .35; H = h * (portrait ? 2.9 : 1.75); W = WIDTHS[st - 1] * (portrait ? 1.9 : 1.6); el = .2; offY = portrait ? .25 : 0; offX = portrait ? 0 : .22 * dirSign; }
+  else { ty = .95; W = portrait ? 4.3 : 7.4; H = portrait ? 3.2 : 5.4; el = .36; offY = portrait ? .25 : 0; offX = portrait ? 0 : .2 * dirSign; }
+  const d = Math.max((H / 2) / th, (W / 2) / tw);
+  const n = Math.hypot(1, el);
+  return { px: tx, py: ty + d * el / n, pz: tz + d / n, tx, ty, tz, offX, offY };
+}
+
+/* ---------- interaction ---------- */
+let sE = 0, sTarget = 0, intro = reduce ? 1 : 0;
+const tilt = { x: 0, y: 0, tx: 0, ty: 0, gyro: false };
+let down = null, dragging = false, lastX = 0;
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+const pickables = items.map(it => it.root);
+function pick(cx, cy){
+  const r = canvas.getBoundingClientRect();
+  ndc.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
+  ray.setFromCamera(ndc, camera);
+  const hit = ray.intersectObjects(pickables, true)[0];
+  return hit ? hit.object.userData.idx : -1;
+}
+const tweens = [];
+function tween(obj, key, to, dur){ tweens.push({ obj, key, from: obj[key], to, t0: performance.now(), dur }); }
+function spin(i){
+  if (i === 4) tween(rot, "box", rot.box + Math.PI * 2, 1600);
+  else tween(rot.step, i, rot.step[i] + Math.PI * 2, 1400);
+  dustMat.uniforms.uBoost.value = 1;
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-spin]"); if (b) spin(+b.dataset.spin); });
+
+canvas.addEventListener("pointerdown", e => { down = { x: e.clientX, y: e.clientY, t: performance.now() }; dragging = false; lastX = e.clientX; vel = 0; });
+addEventListener("pointermove", e => {
+  if (!down) {
+    if (e.pointerType === "mouse" && !tilt.gyro) { tilt.tx = (e.clientX / innerWidth - .5) * 2; tilt.ty = (e.clientY / innerHeight - .5) * 2; }
+    if (e.target === canvas && e.pointerType === "mouse") canvas.classList.toggle("pointing", pick(e.clientX, e.clientY) >= 0);
+    return;
+  }
+  const dx = e.clientX - lastX; lastX = e.clientX;
+  if (!dragging && Math.abs(e.clientX - down.x) > 6) { dragging = true; canvas.classList.add("grabbing"); }
+  if (dragging) { const d = dx * (root.dir === "rtl" ? 1 : 1) * .009; applyRot(d); vel = d; }
+});
+function endDrag(e){
+  if (!down) return;
+  const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
+  if (!dragging && moved < 8 && performance.now() - down.t < 450 && e.type === "pointerup") onTap(e.clientX, e.clientY);
+  down = null; dragging = false; canvas.classList.remove("grabbing");
+}
+addEventListener("pointerup", endDrag); addEventListener("pointercancel", endDrag);
+function nearest(){ return Math.round(sE); }
+function applyRot(d){
+  const n = nearest();
+  if (n === 0) rot.hero += d; else if (n <= 4) rot.step[n - 1] += d; else rot.box += d;
+}
+function onTap(x, y){
+  const i = pick(x, y); if (i < 0) return;
+  const n = nearest();
+  if (i === 4) { spin(4); return; }
+  if (n >= 1 && n <= 4 && i === n - 1) { spin(i); return; }
+  window.bsGo?.("step" + (i + 1));
+}
+addEventListener("bs:tilt", e => {
+  if (!e.detail) { tilt.gyro = false; tilt.tx = tilt.ty = 0; return; }
+  tilt.gyro = true; tilt.tx = clamp(e.detail.x / 25, -1, 1); tilt.ty = clamp((e.detail.y - 45) / 30, -1, 1);
+});
+addEventListener("bs:lang", e => { dirSign = e.detail === "ar" ? 1 : -1; });
+
+/* ---------- hotspots ---------- */
+const hsEls = [...document.querySelectorAll("#hotspots .hs")];
+const v3 = new THREE.Vector3();
+function placeHotspots(alpha){
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  hsEls.forEach((el, i) => {
+    const it = items[i];
+    v3.set(0, it.h * it.cur.s + .12, 0).applyMatrix4(it.root.matrixWorld);
+    v3.project(camera);
+    const vis = alpha > .02 && v3.z < 1;
+    el.style.visibility = vis ? "visible" : "hidden";
+    if (!vis) return;
+    const sx = (v3.x + 1) / 2 * w, sy = (1 - v3.y) / 2 * h;
+    if (sy < 104 || sy > h * .62) { el.style.visibility = "hidden"; return; }
+    el.style.opacity = alpha.toFixed(3);
+    el.style.transform = `translate(${sx.toFixed(1)}px, ${sy.toFixed(1)}px) translate(-50%, -110%)`;
+  });
+}
+
+/* ---------- sizing ---------- */
+let W = 0, H = 0;
+function resize(){
+  W = canvas.clientWidth; H = canvas.clientHeight;
+  renderer.setSize(W, H, false);
+  aspect = W / H; portrait = aspect < .9;
+  camera.fov = portrait ? 40 : 34;
+  camera.aspect = aspect; camera.updateProjectionMatrix();
+  measure();
+}
+new ResizeObserver(resize).observe(canvas);
+addEventListener("resize", measure);
+resize();
+document.fonts?.ready?.then(measure);
+
+/* ---------- loop ---------- */
+const cam = { px: 0, py: 3, pz: 12, tx: 0, ty: 1, tz: 0, offX: 0, offY: 0 };
+const camGoal = { ...cam };
+let first = true, last = performance.now(), running = true, ft = [], fpsNow = 60;
+const box5 = document.getElementById("box");
+let fakeNow = 0;
+window.__bs = { get fps(){ return fpsNow; }, get pr(){ return pr; }, get s(){ return sE; }, camera, items, get aspect(){ return aspect; },
+  // test hook: advance n frames synchronously and return the canvas image
+  tick(n = 1, ms = 16){ fakeNow = Math.max(fakeNow, last); for (let i = 0; i < n; i++) { fakeNow += ms; frame(fakeNow, true); } return canvas.toDataURL("image/jpeg", .85); } };
+
+function frame(now, manual){
+  const dt = clamp((now - last) / 1000, 0, .05); last = now;
+  const t = now / 1000;
+
+  // fade the stage out once the box section has passed
+  const br = box5.getBoundingClientRect();
+  const vis = clamp((br.bottom - innerHeight * .3) / (innerHeight * .5), 0, 1);
+  canvas.style.opacity = root.classList.contains("is3d") ? vis.toFixed(3) : "";
+  if (vis <= 0 && !first) { hsEls.forEach(el => el.style.visibility = "hidden"); if (!manual) requestAnimationFrame(frame); return; }
+
+  sTarget = storyAt(scrollY);
+  sE = reduce ? sTarget : lerp(sE, sTarget, 1 - Math.exp(-dt * 7));
+  if (Math.abs(sE - sTarget) < 1e-4) sE = sTarget;
+  intro = reduce ? 1 : Math.min(1, intro + dt / 2.4);
+  const ie = 1 - Math.pow(1 - intro, 3);
+
+  for (let k = tweens.length - 1; k >= 0; k--) {
+    const tw = tweens[k], p = clamp((now - tw.t0) / tw.dur, 0, 1), e = p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+    tw.obj[tw.key] = tw.from + (tw.to - tw.from) * e; if (p >= 1) tweens.splice(k, 1);
+  }
+  if (!down && Math.abs(vel) > 1e-4) { applyRot(vel); vel *= Math.pow(.05, dt); }
+  dustMat.uniforms.uBoost.value *= Math.pow(.15, dt);
+
+  const a = Math.floor(sE), b = Math.min(stations.length - 1, a + 1), f = sE - a;
+  items.forEach((it, i) => {
+    const A = station(a, i, t), B = station(b, i, t);
+    const x = lerp(A.x, B.x, f), y = lerp(A.y, B.y, f), z = lerp(A.z, B.z, f), ry = lerp(A.ry, B.ry, f), s = lerp(A.s, B.s, f), dim = lerp(A.dim, B.dim, f);
+    const rise = (1 - ie) * (1.6 + i * .35);
+    it.root.position.set(x, y - rise, z); it.root.rotation.y = ry + (1 - ie) * 1.2; it.root.scale.setScalar(Math.max(.001, s));
+    it.root.visible = s > .01;
+    it.cur = { x, y, z, ry, s };
+    if (Math.abs(dim - it.dimNow) > .01) { it.dimNow = dim; const m = 1 - dim * .82; it.mats.forEach(mm => mm.envMapIntensity = mm.userData.env * m); }
+    const sh = shadows[i], lift = clamp(y / 1.6, 0, 1);
+    sh.position.set(x, .004, z); sh.scale.setScalar(it.foot * s * (1 + lift * .8)); sh.material.opacity = .85 * (1 - lift * .75) * (1 - dim * .5) * (s > .05 ? 1 : 0) * ie;
+  });
+
+  const CA = camStation(a), CB = camStation(b);
+  for (const k in camGoal) camGoal[k] = lerp(CA[k], CB[k], f);
+  tilt.x = lerp(tilt.x, tilt.tx, 1 - Math.exp(-dt * 4)); tilt.y = lerp(tilt.y, tilt.ty, 1 - Math.exp(-dt * 4));
+  const k = first || reduce ? 1 : 1 - Math.exp(-dt * 6);
+  for (const key in cam) cam[key] = lerp(cam[key], camGoal[key], k);
+  first = false;
+  // orbit the eye around the target for tilt/parallax
+  const ox = cam.px - cam.tx, oz = cam.pz - cam.tz, yaw = -tilt.x * (tilt.gyro ? .35 : .12), dz = (1 - ie) * 5;
+  const cy = Math.cos(yaw), syw = Math.sin(yaw);
+  camera.position.set(cam.tx + ox * cy + oz * syw, cam.py + tilt.y * (tilt.gyro ? .5 : .18) + (1 - ie) * 1.5, cam.tz - ox * syw + oz * cy + dz);
+  camera.lookAt(cam.tx, cam.ty, cam.tz);
+  camera.setViewOffset(W, H, cam.offX * W, cam.offY * H, W, H);
+
+  // stage dressing per chapter
+  const stepness = clamp(1 - Math.abs(sE - 2.5) / 1.5, 0, 1);
+  beamMat.uniforms.uO.value = lerp(.55, .9, stepness);
+  ringBig.rotation.z = sE * .35; ringThin.rotation.z = -sE * .25;
+  halo.material.opacity = lerp(1, .55, stepness);
+  dustMat.uniforms.uTime.value = reduce ? 0 : t;
+
+  placeHotspots(clamp(1 - sE * 2.5, 0, 1) * ie);
+
+  // render: mirrored pass (reflection in the polished floor), then the scene
+  renderer.clear();
+  world.scale.y = -1; floor.visible = false; dust.visible = false; beam.visible = false; halo.visible = false;
+  renderer.render(scene, camera);
+  renderer.clearDepth();
+  world.scale.y = 1; floor.visible = true; dust.visible = true; beam.visible = true; halo.visible = true;
+  renderer.render(scene, camera);
+
+  // adapt resolution if the device struggles
+  ft.push(dt); if (ft.length >= 60) {
+    const avg = ft.reduce((p, c) => p + c, 0) / ft.length; ft = []; fpsNow = Math.round(1 / avg);
+    if (fpsNow < 40 && pr > 1) { pr = Math.max(1, pr - .25); renderer.setPixelRatio(pr); renderer.setSize(W, H, false); dustMat.uniforms.uPR.value = pr; }
+  }
+  if (running && !manual) requestAnimationFrame(frame);
+}
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) running = false;
+  else if (!running) { running = true; last = performance.now(); requestAnimationFrame(frame); }
+});
+renderer.compile(scene, camera);
+root.classList.add("is3d");
+root.classList.remove("no3d");
+requestAnimationFrame(frame);
+</script>
+
+</body>
+</html>
